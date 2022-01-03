@@ -1,27 +1,26 @@
 #include "raylib.h"
 #include <iostream>
-#include <chrono>
-#include <thread>
 using namespace std;
 Color randomColor(Color color);
-int main(void)
+int main()
 {
     const int screenWidth = 800;
     const int screenHeight = 800;
-    int width = 200;
+    int width = 280;
     int height = 100;
     int x = GetRandomValue(0,screenWidth-width);
     int y = GetRandomValue(0,screenHeight-height);
-    int yVelocity = 8;
-    int xVelocity = 8;
+    int yVelocity = -5;
+    int xVelocity = 5;
     Color color = BLUE;
-    InitWindow(screenWidth, screenHeight, "sony");
+    InitWindow(screenWidth, screenHeight, "sony-banner");
     SetTargetFPS(60);           
     while (!WindowShouldClose())    
     {
         BeginDrawing();
             ClearBackground(BLACK);
-            DrawRectangle(x,y,width,height,color);
+            DrawRectangle(x,y,width,height,BLACK);
+            DrawText("SONY",x,y,100,color);
         EndDrawing();
         if(y <= 0 || y >= screenHeight-height){
             yVelocity *= -1;
