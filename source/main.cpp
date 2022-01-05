@@ -19,8 +19,8 @@ int main()
     {
         BeginDrawing();
             ClearBackground(BLACK);
-            DrawRectangle(x,y,width,height,BLACK);
-            DrawText("SONY",x,y,100,color);
+            DrawRectangleLines(x,y,width,height,color);
+            DrawText("SONY",x+35,y+10,80,color);
         EndDrawing();
         if(y <= 0 || y >= screenHeight-height){
             yVelocity *= -1;
